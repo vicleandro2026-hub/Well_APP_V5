@@ -1,0 +1,81 @@
+name: Compilar Well Studio V5 para macOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master, macos-build]
+    paths:
+      - 'macos/**'
+      - '.github/workflows/build-macos.yml'
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+    working-directory: macos
+
+jobs:
+  macos:
+    name: macOS - ${{ matrix.architecture }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            architecture: arm64
+            python_architecture: arm64
+          - runner: macos-15-intel
+            architecture: x86_64
+            python_architecture: x64
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - name: Obter os arquivos do aplicativo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Preparar Python nativo
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.14'
+          architecture: ${{ matrix.python_architecture }}
+          cache: pip
+          cache-dependency-path: macos/requirements-macos.txt
+
+      - name: Instalar dependências de compilação
+        run: python -m pip install --disable-pip-version-check -r requirements-macos.txt
+
+      - name: Compilar o aplicativo, ZIP e DMG
+        run: python build_macos.py
+
+      - name: Disponibilizar o aplicativo compactado
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          path: macos/dist/Well_Studio_V5_macOS_${{ matrix.architecture }}.zip
+          archive: false
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Disponibilizar o instalador DMG
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          path: macos/dist/Well_Studio_V5_macOS_${{ matrix.architecture }}.dmg
+          archive: false
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Disponibilizar informações e hashes
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: Well_Studio_V5_macOS_${{ matrix.architecture }}_metadados
+          path: |
+            macos/dist/Well_Studio_V5_macOS_${{ matrix.architecture }}.json
+            macos/dist/Well_Studio_V5_macOS_${{ matrix.architecture }}.sha256
+          if-no-files-found: error
+          retention-days: 14

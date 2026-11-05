@@ -1,0 +1,28 @@
+{
+  "horizontal": {
+    "canvas": [
+      16800,
+      12558
+    ],
+    "bbox": [
+      7527,
+      8980,
+      9272,
+      10968
+    ],
+    "source": "Logo Horizontal Padrão.png"
+  },
+  "vertical": {
+    "canvas": [
+      3024,
+      4032
+    ],
+    "bbox": [
+      1302,
+      2886,
+      1722,
+      3365
+    ],
+    "source": "Logo Vertical Padrão.png"
+  }
+}
