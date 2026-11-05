@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#141513" />
+    <meta name="description" content="Aplique a marca Well às suas fotos. Logos automáticos, posição livre e exportação em lote, direto no navegador." />
+    <title>Well Studio — Marca d'água para suas fotos</title>
+    <link rel="icon" type="image/png" href="/src/assets/brand.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#editor">Ir para o editor</a>
+    <div id="app">
+      <header class="app-header">
+        <div class="brand-lockup">
+          <img id="brand-image" alt="Well Imóveis" width="48" height="55" />
+          <div><h1>Well <span>Studio</span></h1><p>Uma assinatura em cada foto.</p></div>
+        </div>
+        <div class="header-actions">
+          <span class="local-note"><i data-lucide="shield-check"></i>Suas fotos ficam neste aparelho</span>
+          <button id="help-button" class="button subtle help-button" type="button" aria-label="Como usar"><i data-lucide="circle-help"></i><span>Como usar</span></button>
+          <button id="add-button" class="button primary" type="button"><i data-lucide="image-plus"></i>Adicionar fotos</button>
+          <input id="file-input" class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp" multiple aria-label="Selecionar fotos JPG, PNG ou WebP" />
+        </div>
+      </header>
+
+      <main id="editor" class="editor-layout">
+        <section class="workspace" aria-label="Editor de fotos">
+          <div class="workspace-heading">
+            <div class="file-info"><h2 id="photo-name">Seu próximo lote começa aqui.</h2><p id="photo-info">Adicione suas fotos. A Well cuida da assinatura.</p></div>
+            <label class="original-toggle"><input id="show-original" type="checkbox" disabled /><span>Ver original</span></label>
+          </div>
+          <div class="preview-frame">
+            <div class="preview-toolbar" role="toolbar" aria-label="Ferramentas de visualização">
+              <div class="tool-modes" role="group" aria-label="Modo de edição">
+                <button id="tool-logo" class="tool-button active" type="button" aria-pressed="true" disabled><i data-lucide="move"></i><span>Mover logo</span></button>
+                <button id="tool-pan" class="tool-button" type="button" aria-pressed="false" disabled><i data-lucide="hand"></i><span>Navegar</span></button>
+              </div>
+              <div class="zoom-tools">
+                <button id="zoom-out" class="icon-button" type="button" aria-label="Diminuir zoom" title="Diminuir zoom" disabled><i data-lucide="minus"></i></button>
+                <output id="zoom-value" aria-label="Zoom atual">—</output>
+                <button id="zoom-in" class="icon-button" type="button" aria-label="Aumentar zoom" title="Aumentar zoom" disabled><i data-lucide="plus"></i></button>
+                <span class="toolbar-divider"></span>
+                <button id="fit-button" class="tool-button fit-button" type="button" disabled><i data-lucide="scan"></i><span>Ajustar</span></button>
+                <button id="actual-button" class="tool-button actual-button" type="button" disabled>1:1</button>
+              </div>
+            </div>
+            <div id="stage" class="stage" tabindex="0" role="group" aria-label="Prévia interativa da foto" aria-describedby="preview-hint">
+              <canvas id="preview-canvas" aria-label="Foto com a marca d'água Well"></canvas>
+              <div id="empty-state" class="empty-state">
+                <div class="empty-mark"><i data-lucide="images"></i></div>
+                <h3>Suas fotos. A sua marca.</h3>
+                <p>Arraste as fotos para cá ou escolha os arquivos.<br />O logo certo é aplicado em cada imagem.</p>
+                <button id="empty-add" class="button primary" type="button"><i data-lucide="plus"></i>Escolher fotos</button>
+                <span class="accepted-types">JPG, PNG e WebP · até 100 MB por foto</span>
+              </div>
+              <div id="loading-state" class="stage-loading" hidden><span class="loader"></span><span>Preparando a prévia…</span></div>
+              <div id="drop-overlay" class="drop-overlay" hidden><i data-lucide="image-plus"></i><strong>Solte suas fotos aqui</strong></div>
+              <span id="photo-badge" class="photo-badge" hidden></span>
+            </div>
+            <div class="preview-caption"><span id="preview-hint">O fundo é da Well. O próximo destaque é o seu imóvel.</span><span id="image-index"></span></div>
+          </div>
+          <section class="photo-tray" aria-label="Fotos do lote">
+            <div class="tray-heading"><h3>Seu lote <span id="photo-count">0 fotos</span></h3><div><button id="remove-button" class="text-button" type="button" disabled>Remover foto</button><button id="clear-button" class="text-button muted" type="button" disabled>Limpar lote</button></div></div>
+            <div id="photo-list" class="photo-list" role="list" aria-label="Selecionar uma foto para a prévia"><p class="tray-empty">As fotos adicionadas aparecem aqui.</p></div>
+          </section>
+        </section>
+
+        <aside class="settings-panel" aria-label="Ajustes da marca d'água">
+          <div class="settings-scroll">
+            <div class="panel-title"><div><h2>Sua assinatura</h2><p>Ajustes aplicados a todas as fotos.</p></div><button id="reset-button" class="icon-button" type="button" aria-label="Restaurar os ajustes padrão" title="Restaurar padrão"><i data-lucide="rotate-ccw"></i></button></div>
+            <section class="settings-group logo-group" aria-labelledby="logo-heading">
+              <div class="group-title"><h3 id="logo-heading">Logo automático</h3><span class="auto-label"><span></span>Ativado</span></div>
+              <div class="logo-variants"><div><i data-lucide="rectangle-vertical"></i><span>Vertical</span></div><div><i data-lucide="rectangle-horizontal"></i><span>Horizontal</span></div></div>
+              <p class="field-hint">Cada foto recebe o logo do seu formato.</p>
+            </section>
+            <section class="settings-group position-group" aria-labelledby="position-heading">
+              <div class="group-title"><h3 id="position-heading">Posição do logo</h3><span id="position-label" class="value-caption">Padrão Well</span></div>
+              <button id="original-position" class="preset-wide selected" type="button" aria-pressed="true"><i data-lucide="sparkles"></i>Usar padrão Well</button>
+              <div id="position-grid" class="position-grid" role="group" aria-label="Nove posições do logo"></div>
+              <button id="free-position" class="preset-wide free-position" type="button" aria-pressed="false"><i data-lucide="move"></i>Posicionar livremente</button>
+              <p class="field-hint">Arraste o logo na foto ou informe a posição.</p>
+              <div class="coordinates"><label for="position-x"><span>Horizontal <small>X</small></span><div><input id="position-x" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="50.0" /><span>%</span></div></label><label for="position-y"><span>Vertical <small>Y</small></span><div><input id="position-y" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="78.0" /><span>%</span></div></label></div>
+              <p id="coordinate-error" class="inline-error" hidden></p>
+            </section>
+            <section class="settings-group appearance-group" aria-labelledby="appearance-heading">
+              <h3 id="appearance-heading">Aparência</h3>
+              <div class="range-field"><label for="logo-size">Tamanho</label><output id="size-value" for="logo-size">100%</output><input id="logo-size" type="range" min="50" max="250" value="100" /></div>
+              <div class="range-field"><label for="logo-opacity">Opacidade</label><output id="opacity-value" for="logo-opacity">100%</output><input id="logo-opacity" type="range" min="20" max="100" value="100" /></div>
+              <div class="range-field"><label for="logo-margin">Margem das bordas</label><output id="margin-value" for="logo-margin">4%</output><input id="logo-margin" type="range" min="0" max="12" value="4" /></div>
+              <p class="field-hint">A margem se aplica às nove posições fixas.</p>
+            </section>
+            <section class="settings-group export-options" aria-labelledby="export-heading">
+              <h3 id="export-heading">Exportação</h3><label for="output-format" class="select-label">Formato do arquivo</label>
+              <select id="output-format"><option value="original">Mesmo formato da foto</option><option value="jpeg">JPG · fotos mais leves</option><option value="png">PNG · com transparência</option><option value="webp">WebP</option></select>
+              <p class="resolution-note"><i data-lucide="check"></i>Resolução original preservada</p>
+            </section>
+          </div>
+          <div class="download-panel">
+            <div class="export-status"><span id="status-text" role="status" aria-live="polite">Adicione fotos para começar.</span><button id="cancel-button" class="text-button" type="button" hidden>Cancelar</button></div>
+            <progress id="export-progress" max="100" value="0" aria-label="Progresso do processamento" hidden></progress>
+            <button id="download-button" class="button primary download-button" type="button" disabled><i data-lucide="download"></i><span>Baixar fotos</span></button>
+            <p id="download-caption">Uma foto ou um ZIP com todo o lote.</p>
+            <details id="errors-panel" class="errors-panel" hidden><summary>Ver arquivos com erro</summary><ul id="error-list"></ul></details>
+          </div>
+        </aside>
+      </main>
+      <footer class="app-footer"><span>Well Imóveis <span class="footer-dot">·</span> Studio Web</span><span>Desenvolvido por Victor Leandro <span class="footer-dot">|</span> USBABC Conteúdo Criativo</span></footer>
+    </div>
+    <dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-heading"><h2 id="help-title">Da foto ao resultado.</h2><button id="close-help" class="icon-button" type="button" aria-label="Fechar instruções"><i data-lucide="x"></i></button></div><ol class="help-steps"><li><strong>Escolha as fotos.</strong><p>Você pode misturar imagens verticais e horizontais. O logo é escolhido automaticamente.</p></li><li><strong>Encontre a posição.</strong><p>Use uma das nove posições ou arraste o logo na prévia. Os ajustes valem para todo o lote.</p></li><li><strong>Baixe o resultado.</strong><p>Uma foto é baixada diretamente. Várias fotos são reunidas em um arquivo ZIP.</p></li></ol><div class="help-shortcuts"><p><kbd>Roda do mouse</kbd> Aproximar ou afastar</p><p><kbd>Espaço + arrastar</kbd> Navegar pela foto</p><p><kbd>Setas</kbd> Mover logo · <kbd>Shift</kbd> passos maiores</p><p><kbd>Home</kbd> Ajustar a foto inteira</p></div><p class="help-note">As fotos são processadas neste navegador. Os arquivos originais permanecem no seu aparelho.</p></dialog>
+    <noscript>Ative o JavaScript no navegador para usar o editor de fotos Well Studio.</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

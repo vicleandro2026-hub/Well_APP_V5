@@ -1,0 +1,7 @@
+node_modules/
+.impeccable/review/
+dist/
+.vercel/
+*.log
+.env*
+!.env.example

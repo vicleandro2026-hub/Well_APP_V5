@@ -1,0 +1,20 @@
+{
+  "name": "well-studio-web",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@fontsource/manrope": "5.3.0",
+    "fflate": "0.8.3",
+    "lucide": "1.69.0"
+  },
+  "devDependencies": {
+    "vite": "8.3.6"
+  },
+  "engines": { "node": ">=22.12.0" }
+}
