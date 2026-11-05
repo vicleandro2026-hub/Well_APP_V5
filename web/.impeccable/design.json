@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T20:41:45.987387+00:00",
+  "title": "Design System: Well Studio Web",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Carvão de fundo",
+        "canonical": "#141513",
+        "tonalRamp": [
+          "oklch(15% 0.0042 128.71)",
+          "oklch(26% 0.0042 128.71)",
+          "oklch(38% 0.0042 128.71)",
+          "oklch(49% 0.0042 128.71)",
+          "oklch(61% 0.0042 128.71)",
+          "oklch(72% 0.0042 128.71)",
+          "oklch(84% 0.0042 128.71)",
+          "oklch(95% 0.0042 128.71)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Carvão de painel",
+        "canonical": "#1c1d1a",
+        "tonalRamp": [
+          "oklch(15% 0.0059 121.91)",
+          "oklch(26% 0.0059 121.91)",
+          "oklch(38% 0.0059 121.91)",
+          "oklch(49% 0.0059 121.91)",
+          "oklch(61% 0.0059 121.91)",
+          "oklch(72% 0.0059 121.91)",
+          "oklch(84% 0.0059 121.91)",
+          "oklch(95% 0.0059 121.91)"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Carvão elevado",
+        "canonical": "#24251f",
+        "tonalRamp": [
+          "oklch(15% 0.0110 114.85)",
+          "oklch(26% 0.0110 114.85)",
+          "oklch(38% 0.0110 114.85)",
+          "oklch(49% 0.0110 114.85)",
+          "oklch(61% 0.0110 114.85)",
+          "oklch(72% 0.0110 114.85)",
+          "oklch(84% 0.0110 114.85)",
+          "oklch(95% 0.0110 114.85)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Marfim quente",
+        "canonical": "#eee8dc",
+        "tonalRamp": [
+          "oklch(15% 0.0173 84.59)",
+          "oklch(26% 0.0173 84.59)",
+          "oklch(38% 0.0173 84.59)",
+          "oklch(49% 0.0173 84.59)",
+          "oklch(61% 0.0173 84.59)",
+          "oklch(72% 0.0173 84.59)",
+          "oklch(84% 0.0173 84.59)",
+          "oklch(95% 0.0173 84.59)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Cinza quente",
+        "canonical": "#b4afa4",
+        "tonalRamp": [
+          "oklch(15% 0.0165 86.44)",
+          "oklch(26% 0.0165 86.44)",
+          "oklch(38% 0.0165 86.44)",
+          "oklch(49% 0.0165 86.44)",
+          "oklch(61% 0.0165 86.44)",
+          "oklch(72% 0.0165 86.44)",
+          "oklch(84% 0.0165 86.44)",
+          "oklch(95% 0.0165 86.44)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Ouro velho",
+        "canonical": "#b69a61",
+        "tonalRamp": [
+          "oklch(15% 0.0822 84.24)",
+          "oklch(26% 0.0822 84.24)",
+          "oklch(38% 0.0822 84.24)",
+          "oklch(49% 0.0822 84.24)",
+          "oklch(61% 0.0822 84.24)",
+          "oklch(72% 0.0822 84.24)",
+          "oklch(84% 0.0822 84.24)",
+          "oklch(95% 0.0822 84.24)"
+        ]
+      },
+      "gold-hover": {
+        "role": "primary",
+        "displayName": "Ouro iluminado",
+        "canonical": "#cbb17b",
+        "tonalRamp": [
+          "oklch(15% 0.0771 84.97)",
+          "oklch(26% 0.0771 84.97)",
+          "oklch(38% 0.0771 84.97)",
+          "oklch(49% 0.0771 84.97)",
+          "oklch(61% 0.0771 84.97)",
+          "oklch(72% 0.0771 84.97)",
+          "oklch(84% 0.0771 84.97)",
+          "oklch(95% 0.0771 84.97)"
+        ]
+      },
+      "gold-soft": {
+        "role": "primary",
+        "displayName": "Ouro sombreado",
+        "canonical": "#393122",
+        "tonalRamp": [
+          "oklch(15% 0.0275 82.91)",
+          "oklch(26% 0.0275 82.91)",
+          "oklch(38% 0.0275 82.91)",
+          "oklch(49% 0.0275 82.91)",
+          "oklch(61% 0.0275 82.91)",
+          "oklch(72% 0.0275 82.91)",
+          "oklch(84% 0.0275 82.91)",
+          "oklch(95% 0.0275 82.91)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Divisória mineral",
+        "canonical": "#3c3d33",
+        "tonalRamp": [
+          "oklch(15% 0.0168 111.89)",
+          "oklch(26% 0.0168 111.89)",
+          "oklch(38% 0.0168 111.89)",
+          "oklch(49% 0.0168 111.89)",
+          "oklch(61% 0.0168 111.89)",
+          "oklch(72% 0.0168 111.89)",
+          "oklch(84% 0.0168 111.89)",
+          "oklch(95% 0.0168 111.89)"
+        ]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "Sucesso",
+        "canonical": "#a3c7a2",
+        "tonalRamp": [
+          "oklch(15% 0.0644 144.24)",
+          "oklch(26% 0.0644 144.24)",
+          "oklch(38% 0.0644 144.24)",
+          "oklch(49% 0.0644 144.24)",
+          "oklch(61% 0.0644 144.24)",
+          "oklch(72% 0.0644 144.24)",
+          "oklch(84% 0.0644 144.24)",
+          "oklch(95% 0.0644 144.24)"
+        ]
+      },
+      "error": {
+        "role": "semantic",
+        "displayName": "Erro",
+        "canonical": "#f09d8e",
+        "tonalRamp": [
+          "oklch(15% 0.1025 30.74)",
+          "oklch(26% 0.1025 30.74)",
+          "oklch(38% 0.1025 30.74)",
+          "oklch(49% 0.1025 30.74)",
+          "oklch(61% 0.1025 30.74)",
+          "oklch(72% 0.1025 30.74)",
+          "oklch(84% 0.1025 30.74)",
+          "oklch(95% 0.1025 30.74)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Marca",
+        "purpose": "Nome do aplicativo no cabeçalho."
+      },
+      "headline": {
+        "displayName": "Convite",
+        "purpose": "Estado vazio do editor."
+      },
+      "title": {
+        "displayName": "Título",
+        "purpose": "Nome da foto e títulos de painel."
+      },
+      "body": {
+        "displayName": "Corpo",
+        "purpose": "Explicações da ajuda."
+      },
+      "label": {
+        "displayName": "Ação",
+        "purpose": "Ações principais e títulos de grupos."
+      }
+    },
+    "shadows": [
+      {
+        "name": "help-dialog",
+        "value": "0 16px 60px #0007",
+        "purpose": "Separar o diálogo nativo da área de trabalho."
+      },
+      {
+        "name": "photo-preview",
+        "value": "shadowColor: #0009; shadowBlur: 20; shadowOffsetY: 5",
+        "purpose": "Sombra da foto desenhada no Canvas 2D; não é uma declaração CSS."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background .15s, color .15s, border-color .15s",
+        "purpose": "Mudanças de estado dos botões; desativadas com movimento reduzido."
+      },
+      {
+        "name": "loading-spin",
+        "value": "spin .75s linear infinite",
+        "purpose": "Indicador de preparação da prévia; desativado com movimento reduzido."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "520px"
+      },
+      {
+        "name": "stacked",
+        "value": "800px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-desktop",
+        "value": "1650px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ações de adicionar e baixar fotos.",
+      "html": "<button class=\"ds-primary\" type=\"button\">Adicionar fotos</button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:41px;padding:10px 16px;border:1px solid var(--line,#3c3d33);border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;transition:background .15s,color .15s,border-color .15s;font-family:'Manrope',sans-serif;color:#171812;background:var(--gold,#b69a61);border-color:transparent}.ds-primary:hover{background:var(--gold-hover,#cbb17b)}.ds-primary:active{background:#aa8c51}.ds-primary:focus-visible{outline:2px solid var(--gold-hover,#cbb17b);outline-offset:4px;}.ds-primary:disabled{opacity:.43;cursor:not-allowed}"
+    },
+    {
+      "name": "Botão secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ação com superfície elevada.",
+      "html": "<button class=\"ds-secondary\" type=\"button\">Ajustar</button>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:41px;padding:10px 16px;border:1px solid var(--line,#3c3d33);border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;transition:background .15s,color .15s,border-color .15s;font-family:'Manrope',sans-serif;background:var(--surface-raised,#24251f);color:var(--ink,#eee8dc)}.ds-secondary:hover{background:#303128}.ds-secondary:focus-visible{outline:2px solid var(--gold-hover,#cbb17b);outline-offset:4px;}.ds-secondary:disabled{opacity:.43;cursor:not-allowed}"
+    },
+    {
+      "name": "Botão sutil",
+      "kind": "button",
+      "refersTo": "button-subtle",
+      "description": "Acesso à ajuda com pouca ênfase visual.",
+      "html": "<button class=\"ds-subtle\" type=\"button\">Como usar</button>",
+      "css": ".ds-subtle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:41px;padding:10px 16px;border:1px solid var(--line,#3c3d33);border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;transition:background .15s,color .15s,border-color .15s;font-family:'Manrope',sans-serif;background:transparent;border-color:transparent;color:var(--muted,#b4afa4)}.ds-subtle:hover{background:var(--surface-raised,#24251f);color:var(--ink,#eee8dc)}.ds-subtle:focus-visible{outline:2px solid var(--gold-hover,#cbb17b);outline-offset:4px;}"
+    },
+    {
+      "name": "Coordenada",
+      "kind": "input",
+      "refersTo": "coordinate-input",
+      "description": "Campo numérico com unidade visível.",
+      "html": "<label class=\"ds-coordinate\">Horizontal <span class=\"ds-coordinate-box\"><input type=\"number\" min=\"0\" max=\"100\" step=\"0.1\" value=\"50.0\" aria-label=\"Posição horizontal em porcentagem\"><span>%</span></span></label>",
+      "css": ".ds-coordinate{display:block;width:128px;font-size:10px;color:var(--muted,#b4afa4);font-family:'Manrope',sans-serif;}.ds-coordinate-box{display:flex;align-items:center;margin-top:6px;background:var(--bg,#141513);border:1px solid var(--line,#3c3d33);border-radius:4px}.ds-coordinate-box:focus-within{border-color:var(--gold,#b69a61)}.ds-coordinate input{width:100%;min-width:0;padding:8px 7px;background:transparent;border:0;color:var(--ink,#eee8dc);font-family:inherit;font-size:11px;font-variant-numeric:tabular-nums}.ds-coordinate input:focus-visible{outline:2px solid var(--gold-hover,#cbb17b);outline-offset:4px;}.ds-coordinate-box>span{padding-right:8px}"
+    },
+    {
+      "name": "Posição selecionada",
+      "kind": "chip",
+      "refersTo": "position-preset",
+      "description": "Preset de posição; o estado acessível acompanha a seleção.",
+      "html": "<button class=\"ds-position\" type=\"button\" aria-pressed=\"true\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><rect x=\".5\" y=\".5\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\"/><rect x=\"6\" y=\"6\" width=\"3\" height=\"3\" fill=\"currentColor\"/></svg>Centro</button>",
+      "css": ".ds-position{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:37px;padding:6px 9px;border:1px solid var(--gold,#b69a61);border-radius:4px;color:#e7cf9b;background:var(--gold-soft,#393122);font-size:9px;cursor:pointer;font-family:'Manrope',sans-serif;}.ds-position:hover{background:#2b2b22;border-color:#6a5b3f}.ds-position:focus-visible{outline:2px solid var(--gold-hover,#cbb17b);outline-offset:4px;}"
+    },
+    {
+      "name": "Barra de prévia",
+      "kind": "nav",
+      "refersTo": "preview-toolbar",
+      "description": "Alternância entre manipular logo e navegar pela imagem.",
+      "html": "<div class=\"ds-toolbar\" role=\"toolbar\" aria-label=\"Ferramentas de visualização\"><button type=\"button\" class=\"ds-tool ds-tool-active\" aria-pressed=\"true\">Mover logo</button><button type=\"button\" class=\"ds-tool\" aria-pressed=\"false\">Navegar</button></div>",
+      "css": ".ds-toolbar{display:flex;align-items:center;gap:3px;padding:5px 8px;min-height:47px;background:var(--surface,#1c1d1a);border:1px solid var(--line,#3c3d33);border-radius:7px 7px 0 0;font-family:'Manrope',sans-serif;}.ds-tool{padding:6px 9px;min-height:32px;border:1px solid transparent;border-radius:4px;background:transparent;color:var(--muted,#b4afa4);font-family:inherit;font-size:11px;cursor:pointer}.ds-tool:hover{background:#2c2d25;color:var(--ink,#eee8dc)}.ds-tool-active{background:var(--gold-soft,#393122);color:#dbc18e;border-color:#655739}.ds-tool:focus-visible{outline:2px solid var(--gold-hover,#cbb17b);outline-offset:4px;}"
+    },
+    {
+      "name": "Foto do lote",
+      "kind": "card",
+      "refersTo": "photo-card",
+      "description": "Moldura selecionada; a área neutra apenas representa a miniatura neste catálogo.",
+      "html": "<button class=\"ds-photo\" type=\"button\" aria-pressed=\"true\" aria-label=\"Foto selecionada\"><span class=\"ds-photo-placeholder\" aria-hidden=\"true\">Miniatura</span><span class=\"ds-photo-name\">foto-do-imóvel.jpg</span></button>",
+      "css": ".ds-photo{display:block;width:117px;padding:4px;border:1px solid var(--gold,#b69a61);border-radius:5px;background:var(--gold-soft,#393122);color:var(--ink,#eee8dc);text-align:left;cursor:pointer;font-family:'Manrope',sans-serif;}.ds-photo-placeholder{display:flex;align-items:center;justify-content:center;width:107px;height:64px;background:var(--surface,#1c1d1a);color:var(--muted,#b4afa4);border-radius:2px;font-size:11px}.ds-photo-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;padding:6px 2px 2px}.ds-photo:hover{border-color:#746445}.ds-photo:focus-visible{outline:2px solid var(--gold-hover,#cbb17b);outline-offset:4px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Identidade V5 da Well",
+    "overview": "Expansão para navegador da identidade V5 fornecida pelo usuário: fundo original Well, marca real, carvão e ouro velho. Esses recursos são a autoridade visual; os aplicativos nativos V3, V4 e V5 permanecem preservados.\n\nA interface oferece uma moldura escura e discreta para as fotos de imóveis. Superfícies tonais, divisórias finas e ferramentas compactas sustentam a operação. O ouro orienta ações e seleção sem competir com a foto.",
+    "keyCharacteristics": [
+      "Fundo e logos originais da Well.",
+      "Carvão em camadas, texto quente e ouro velho.",
+      "Densidade de ferramenta, com foto como conteúdo principal.",
+      "Estados explícitos e foco visível."
+    ],
+    "rules": [
+      {
+        "name": "The Selection Rule",
+        "body": "Seleção combina ouro com contorno, fundo e estado acessível; não depende apenas da cor.",
+        "section": "colors"
+      },
+      {
+        "name": "The Frame Rule",
+        "body": "A moldura da interface mantém seu contraste discreto para a fotografia continuar sendo o destaque.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** preservar fundo, marca e logos originais da Well.",
+      "**Do** usar ouro para ações, seleção e foco dentro da paleta existente.",
+      "**Do** combinar texto, ícone e estado acessível para comunicar seleção e resultado.",
+      "**Do** priorizar a leitura da foto e a previsibilidade dos ajustes globais."
+    ],
+    "donts": [
+      "**Don't** substituir a identidade V5 por novas cores de marca ou logos inventados.",
+      "**Don't** inserir fotos fictícias no lote real do usuário.",
+      "**Don't** exportar a moldura ou a seleção que só existe na prévia.",
+      "**Don't** tratar zoom e pan da prévia como alterações da resolução de exportação."
+    ]
+  }
+}
